@@ -1,14 +1,14 @@
-import { UserItem } from './UserItem';
-import PropTypes from 'react';
+import { UserItem } from '../user/UserItem';
+import PropTypes from 'prop-types';
 
 export const UsersList = ({ users }) => {
-  return users.map(users => {
-    return (
-      <ul>
-        <UserItem key={users.id} {...users} />
-      </ul>
-    );
-  });
+  return (
+    <ul>
+      {users.map(user => (
+        <UserItem key={user.id} {...user} />
+      ))}
+    </ul>
+  );
 };
 UsersList.prototype = {
   users: PropTypes.arrayOf(),
