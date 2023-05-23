@@ -4,7 +4,7 @@ import { Section } from './section/Section';
 
 export const App = () => {
   return (
-    <Section title={'userList'}>
+    <Section title={'UserList'}>
       <UsersList users={users} />
     </Section>
   );
