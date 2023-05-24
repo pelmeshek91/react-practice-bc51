@@ -14,3 +14,12 @@ export const NativeText = styled.span`
   }
   color: ${({ isEndedBiz }) => (isEndedBiz ? 'violet' : 'rgb(113, 162, 193);')};
 `;
+
+export const Button = styled.button`
+  min-width: 80px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid;
+  background-color: rgb(142, 190, 190);
+  color: aquamarine;
+`;
