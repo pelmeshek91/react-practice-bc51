@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Section } from 'components/Section/Section';
-import { NativeText, Title } from './UserItem.styled';
-import { StyledBtn } from './UserItem.styled';
+import { NativeText, Title, StyledBtn } from './UserItem.styled';
 
 export const UserItem = ({
   id,
