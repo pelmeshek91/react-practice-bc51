@@ -15,7 +15,7 @@ export const NativeText = styled.span`
   color: ${({ isEndedBiz }) => (isEndedBiz ? 'violet' : 'rgb(113, 162, 193);')};
 `;
 
-export const Button = styled.button`
+export const StyledBtn = styled.button`
   min-width: 80px;
   height: 50px;
   border-radius: 10px;

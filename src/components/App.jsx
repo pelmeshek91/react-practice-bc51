@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
-import { UsersList } from './usersList/UsersList';
+import { UsersList } from './UsersList/UsersList';
 import data from '../users.json';
-import Section from './Section/Section';
+import { Section } from './Section/Section';
 import Button from './Button/Button';
 // import Form from './Form/Form';
 import FormikForm from './Form/FormikForm';
