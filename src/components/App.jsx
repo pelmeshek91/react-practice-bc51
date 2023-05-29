@@ -1,17 +1,28 @@
-import { UsersList } from './usersList/UsersList';
-import users from '../users.json';
-import { Section } from './section/Section';
+import { nanoid } from 'nanoid';
+import { UsersList } from './usersList/usersList';
+import data from '../users.json';
+import Section from './Section/Section';
+import Button from './Button/Button';
+// import Form from './Form/Form';
+import FormikForm from './Form/FormikForm';
 import { Component } from 'react';
 
-export class App extends Component {
+class App extends Component {
   state = {
-    users,
+    users: data,
+    isShowForm: false,
   };
-  userDelete = id => {
+
+  userDelete = usersId => {
     this.setState(prevState => {
-      return { users: prevState.users.filter(user => user.id !== id) };
+      return {
+        users: prevState.users.filter(user => {
+          return user.id !== usersId;
+        }),
+      };
     });
   };
+
   changeStatus = usersId => {
     this.setState(prevState => {
       return {
@@ -22,16 +33,46 @@ export class App extends Component {
     });
   };
 
+  openForm = () => {
+    this.setState({ isShowForm: true });
+  };
+
+  closeForm = () => {
+    this.setState({ isShowForm: false });
+  };
+
+  addUser = data => {
+    this.setState(prevState => {
+      return {
+        users: [...prevState.users, { ...data, id: nanoid(), hasJob: false }],
+      };
+    });
+  };
+
   render() {
-    const { users } = this.state;
+    const { users, isShowForm } = this.state;
     return (
-      <Section title={'UserList'}>
+      <Section title={'userlist'}>
         <UsersList
-          users={users}
-          onDelete={this.userDelete}
+          userDelete={this.userDelete}
           changeStat={this.changeStatus}
+          users={users}
         />
+
+        {/* {isShowForm ? (
+          <Form addUser={this.addUser} />
+        ) : (
+          <Button text="Open modal" handleClick={this.openForm} />
+        )} */}
+
+        {isShowForm ? (
+          <FormikForm addUser={this.addUser} closeForm={this.closeForm} />
+        ) : (
+          <Button text="Open modal" handleClick={this.openForm} />
+        )}
       </Section>
     );
   }
 }
+
+export default App;

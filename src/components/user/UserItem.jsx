@@ -1,13 +1,16 @@
-import { Section } from 'components/section/Section';
-import { Button, NativeText, Title } from './User.styled';
+import PropTypes from 'prop-types';
+import Section from 'components/Section/Section';
+import { NativeText, Title } from './User.styled';
+import { StyledBtn } from './User.styled';
 
 export const UserItem = ({
   id,
   name,
+  username,
   email,
   avatarUrl,
-  address: { street, city },
-  onDelete,
+
+  userDelete,
   changeJob,
   hasJob,
 }) => {
@@ -18,15 +21,21 @@ export const UserItem = ({
         <Title>
           Name: <NativeText isEndedBiz={isEndedBiz}>{name}</NativeText>
         </Title>
+        <p>UserName: {username}</p>
         <p>email: {email}</p>
         <img src={avatarUrl} alt={name} />
-        <p>
-          address: {street}, {city}
-        </p>
+
         <Title>Has Job : {`${hasJob}`}</Title>
       </li>
-      <Button onClick={() => onDelete(id)}>DELETE</Button>
-      <Button onClick={() => changeJob(id)}>CHANGE</Button>
+      <StyledBtn onClick={() => userDelete(id)}>Delete</StyledBtn>
+      <StyledBtn onClick={() => changeJob(id)}>Change user status</StyledBtn>
     </Section>
   );
+};
+
+UserItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  avatarUrl: PropTypes.string.isRequired,
 };
