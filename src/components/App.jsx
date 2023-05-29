@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
-import { UsersList } from './usersList/UsersList';
+import { UsersList } from './UsersList/UsersList';
 import data from '../users.json';
-import Section from './Section/Section';
+import { Section } from './Section/Section';
 import Button from './Button/Button';
 // import Form from './Form/Form';
 import FormikForm from './Form/FormikForm';
@@ -91,14 +91,14 @@ class App extends Component {
         ) : (
           <Button text="Open modal" handleClick={this.openForm} />
         )} */}
-        {isShowForm ? (
+        {/* {isShowForm ? (
           <FormikForm addUser={this.addUser} closeForm={this.closeForm} />
         ) : (
           <Button text="Open modal" handleClick={this.openForm} />
-        )}
-        {userInfo && (
+        )} */}
+        {/* {userInfo && (
           <Modal userInfo={userInfo} closeUserDetails={this.closeUserDetails} />
-        )}
+        )} */}
       </Section>
     );
   }
