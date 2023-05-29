@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { UserItem } from '../User/UserItem';
+import { UserItem } from '../user/UserItem';
 
 export const UsersList = ({
   users,
