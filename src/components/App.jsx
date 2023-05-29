@@ -1,12 +1,12 @@
 import { nanoid } from 'nanoid';
 import { UsersList } from './usersList/UsersList';
 import data from '../users.json';
-import { Section } from './Section/Section';
-import Button from './Button/Button';
+import { Section } from './section/Section';
+import Button from './button/Button';
 // import Form from './Form/Form';
-import FormikForm from './Form/FormikForm';
+import FormikForm from './form/FormikForm';
 import { Component } from 'react';
-import Modal from './Modal/Modal';
+import Modal from './mdal/Modal';
 
 const USERS_KEY = 'users';
 class App extends Component {
