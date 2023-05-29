@@ -1,4 +1,4 @@
-import { Component, createContext } from 'react';
+// import { Component, createContext } from 'react';
 
 // export class LoginForm extends Component {
 //   handleSubmit = evt => {
@@ -135,54 +135,54 @@ import { Component, createContext } from 'react';
 //   }
 // }
 
-const INITIAL_STATE = {
-  login: '',
-  email: '',
-  password: '',
-  agreed: false,
-};
+// const INITIAL_STATE = {
+//   login: '',
+//   email: '',
+//   password: '',
+//   agreed: false,
+// };
 
-export class SignUpForm extends Component {
-  state = {
-    ...INITIAL_STATE,
-  };
+// export class SignUpForm extends Component {
+//   state = {
+//     ...INITIAL_STATE,
+//   };
 
-  handleChange = evt => {
-    const { name, value, type, checked } = evt.target;
-    // Якщо тип елемента – checkbox, беремо значення checked,
-    // в іншому випадку – value
-    this.setState({ [name]: type === 'checkbox' ? checked : value });
-  };
+//   handleChange = evt => {
+//     const { name, value, type, checked } = evt.target;
+//     // Якщо тип елемента – checkbox, беремо значення checked,
+//     // в іншому випадку – value
+//     this.setState({ [name]: type === 'checkbox' ? checked : value });
+//   };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const { login, email, password, agreed } = this.state;
-    console.log(
-      `Login: ${login}, Email: ${email}, Password: ${password}, Agreed: ${agreed}`
-    );
+//   handleSubmit = e => {
+//     e.preventDefault();
+//     const { login, email, password, agreed } = this.state;
+//     console.log(
+//       `Login: ${login}, Email: ${email}, Password: ${password}, Agreed: ${agreed}`
+//     );
 
-    /* ... */
-  };
+//     /* ... */
+//   };
 
-  render() {
-    const { login, email, password, agreed } = this.state;
+//   render() {
+//     const { login, email, password, agreed } = this.state;
 
-    return (
-      <form onSubmit={this.handleSubmit}>
-        {/* ... */}
-        <label>
-          Agree to terms
-          <input
-            type="checkbox"
-            checked={agreed}
-            onChange={this.handleChange}
-          />
-        </label>
+//     return (
+//       <form onSubmit={this.handleSubmit}>
+//         {/* ... */}
+//         <label>
+//           Agree to terms
+//           <input
+//             type="checkbox"
+//             checked={agreed}
+//             onChange={this.handleChange}
+//           />
+//         </label>
 
-        <button type="submit" disabled={!agreed}>
-          Sign up as {login}
-        </button>
-      </form>
-    );
-  }
-}
+//         <button type="submit" disabled={!agreed}>
+//           Sign up as {login}
+//         </button>
+//       </form>
+//     );
+//   }
+// }
